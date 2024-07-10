@@ -641,7 +641,7 @@ figcaption {
 }
 
 .button-large-blue-text-style {
-  color: #5ab2ce;
+  color: #faf7f2;
   line-height: 100%;
   letter-spacing: -0.05rem;
   text-transform: uppercase;
@@ -1464,6 +1464,7 @@ figcaption {
 }
 
 .nav-burger-icon {
+  background-color: #5ab2ce;
   display: none;
 }
 
