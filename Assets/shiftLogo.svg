@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="400px" viewBox="0 0 279 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>House </title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo1" transform="translate(-261.000000, -200.000000)" stroke="#292F33">
+            <g id="House-" transform="translate(263.000000, 203.000000)">
+                <g id="Base" transform="translate(0.000000, 151.000000)">
+                    <path d="M229,191.8 L192.9,171" id="Shape" stroke-width="3"></path>
+                    <path d="M33.6,1 L8.4,15.5 C3.5,18.3 0.5,23.5 0.5,29.2 L0.5,152.2 C0.5,162.2 5.8,171.5 14.5,176.5 L123.4,239.2 C132,244.2 142.7,244.2 151.3,239.2 L185.4,219.6 C190.4,216.7 193.4,211.5 193.4,205.7 L193.4,155.7 C193.4,150 196.4,144.7 201.2,141.8 L218.9,131 C222.7,128.7 227.5,131.4 227.5,135.9 L227.1,186.7 C227.1,190.6 231.3,193 234.6,191.1 L260.1,176.4 C268.8,171.4 274.1,162.2 274.1,152.2 L274.1,31.6 C274.1,24.5 270.3,17.9 264.1,14.3 L240.1,0.4" id="Shape" stroke-width="5"></path>
+                    <path d="M2.4,22.4 L120.1,90.4 C129.7,96 141.6,95.9 151.3,90.3 L271.8,20.3" id="Shape" stroke-width="4"></path>
+                </g>
+                <g id="Roof" transform="translate(8.000000, 0.000000)">
+                    <path d="M123.8,192.2 L60,92.5" id="Shape" stroke-width="3" stroke-linecap="round"></path>
+                    <path d="M55.2,84 L5.3,122.5 C-1.5,127.7 -0.8,138.2 6.7,142.4 L113,202.6 C122.3,207.8 133.6,207.8 142.8,202.5 L252.1,139.3 C259,135.3 261.2,126.4 256.9,119.6 L193,19.8 C189,13.5 180.7,11.5 174.2,15.2 L55.2,84" id="Shape" stroke-width="5"></path>
+                    <path d="M102.4,8.7 L117,17.1 C118.5,18 119.5,19.6 119.5,21.4 L119.5,47" id="Shape" stroke-width="3"></path>
+                    <path d="M136.2,8.7 L122.3,16.7 C120.4,17.8 119.3,19.8 119.3,21.9 L119.3,47.1" id="Shape" stroke-width="3"></path>
+                    <path d="M102.2,56.2 L102.2,13.2 C102.2,10.3 103.7,7.7 106.2,6.3 L115.3,1.1 C117.8,-0.3 120.9,-0.3 123.4,1.1 L132.4,6.4 C134.8,7.8 136.3,10.5 136.3,13.3 L136.3,37.8" id="Shape" stroke-width="5"></path>
+                </g>
+                <g id="Side-Panel" transform="translate(12.000000, 230.000000)" stroke-width="3">
+                    <polyline id="Shape" stroke-linecap="round" points="14.2 104.2 14.4 65 5.6 59.9 5.6 23.4"></polyline>
+                    <path d="M50.1,123.8 L50.1,13.5" id="Shape" stroke-linecap="round"></path>
+                    <polyline id="Shape" stroke-linecap="round" points="73 137 73 59.4 98.1 74.2 98.1 57.4"></polyline>
+                    <path d="M98,150 L98.3,112.5" id="Shape" stroke-linecap="round"></path>
+                    <path d="M10.8,20 C10.8,23.3 8.5,24.7 5.6,23 C2.7,21.3 0.4,17.3 0.4,14 C0.4,10.7 2.7,9.3 5.6,11 C8.5,12.6 10.8,16.7 10.8,20 Z" id="Shape"></path>
+                    <path d="M55.4,9.8 C55.4,13.1 53.1,14.5 50.2,12.8 C47.3,11.1 45,7.1 45,3.8 C45,0.5 47.3,-0.9 50.2,0.8 C53,2.4 55.4,6.4 55.4,9.8 Z" id="Shape"></path>
+                    <path d="M103,53.4 C103,56.7 100.7,58.1 97.8,56.4 C94.9,54.7 92.6,50.7 92.6,47.4 C92.6,44.1 94.9,42.7 97.8,44.4 C100.7,46 103,50.1 103,53.4 Z" id="Shape"></path>
+                    <path d="M103.5,109 C103.5,112.3 101.2,113.7 98.3,112 C95.4,110.3 93.1,106.3 93.1,103 C93.1,99.7 95.4,98.3 98.3,100 C101.2,101.7 103.5,105.6 103.5,109 Z" id="Shape"></path>
+                    <polyline id="Shape" stroke-linecap="round" points="50.1 104.8 31.3 93.9 31.3 48.1"></polyline>
+                    <path d="M36.5,44.7 C36.5,48 34.2,49.4 31.3,47.7 C28.4,46 26.1,42 26.1,38.7 C26.1,35.4 28.4,34 31.3,35.7 C34.1,37.3 36.5,41.3 36.5,44.7 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
