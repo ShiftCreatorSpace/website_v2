@@ -218,7 +218,7 @@ figcaption {
 }
 
 .text-size-large {
-  font-size: 1.25em;
+  font-size: 1.5em;
   letter-spacing: -0.05rem;
 }
 
@@ -604,6 +604,22 @@ figcaption {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  background-size: 10px 10px, 80px 80px;
+  background-image: linear-gradient(to bottom,transparent 5px,#faf7f2 5px),linear-gradient(to right,black 1px,transparent 1px),linear-gradient(to right,transparent 5px,#faf7f2 5px),linear-gradient(to bottom,black 1px,transparent 1px);
+  /* background-color:#0082f3; */
+  /* background-image: linear-gradient(to bottom,transparent 5px,var(--accent-background) 5px),linear-gradient(to right,#ffffff 1px,transparent 1px),linear-gradient(to right,transparent 5px,var(--accent-background) 5px),linear-gradient(to bottom,#ffffff 1px,transparent 1px); */
+  /* background-image: url(./Assets/background.jpg);  */
+  /* background-image: linear-gradient(to bottom,transparent 5px,var(--accent-background) 5px),linear-gradient(to right, black 1px,transparent 1px),linear-gradient(to right,transparent 5px,var(--accent-background) 5px),linear-gradient(to bottom,black 1px,transparent 1px); */
+  /* background-size: contain;  */
+  background-color: rgba(255,255,255,0.97);
+  background-blend-mode: lighten;
+}
+
+.home-hero-section:before{
+  
+  content: "";
+  z-index: 1;
+  opacity: .8;
 }
 
 .button-primary {
