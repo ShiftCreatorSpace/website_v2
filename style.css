@@ -601,7 +601,7 @@ figcaption {
   display: flex;
   min-height: 100vh;
   /* padding-top: 5em; */
-  padding-bottom: 5em;
+  /* padding-bottom: 5em; */
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -1054,8 +1054,9 @@ figcaption {
 }
 
 .about-text-style {
-  font-size: 1.5em;
+  font-size: 1.7em;
   line-height: 140%;
+  font-family: Lora;
 }
 
 .about-moving-texts-wrap {
@@ -1510,6 +1511,7 @@ figcaption {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  padding-bottom: 2em;
 }
 
 .section-title-wrapper.padding-adjust-xxsmall {
@@ -2101,6 +2103,7 @@ figcaption {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding-bottom: 100px;
 }
 
 .service-item-wrapper {
@@ -2117,7 +2120,9 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  /* padding: 10px; */
+  /* padding-top: 2em; */
+  /* min-height: 100vh; */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -2138,7 +2143,9 @@ figcaption {
 }
 
 .service-img {
-  width: 45%;
+  /* width: 45%; */
+  padding-left: 10%;
+  height: 25%
 }
 
 .service-item-content-wrapper {
@@ -2146,7 +2153,8 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 55%;
+  width: 50%;
+  height: 10%;
   padding: 5em 3.75em 3.75em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2909,6 +2917,7 @@ figcaption {
     width: auto;
     margin-right: 1.5em;
     margin-left: 1.5em;
+    
   }
 
   .title-xlarge {
