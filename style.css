@@ -13,6 +13,7 @@
    Start of custom Webflow CSS
    ========================================================================== */
 
+  
 .w-webflow-badge {
   display: none !important;
   visibility: hidden !important;
@@ -215,8 +216,8 @@ figcaption {
 }
 
 .title-small {
-  font-family: Clashdisplay, sans-serif;
-  font-size: 2.5em;
+  font-family: Lora;
+  font-size: 2em;
   line-height: 90%;
   font-weight: 600;
   letter-spacing: -0.05rem;
@@ -236,8 +237,8 @@ figcaption {
   font-size: 0.75em;
 }
 
-.text-color-blue {
-  color: #5ab2ce;
+.text-color-cream {
+  color: #faf7f2;
 }
 
 .text-align-center {
@@ -1025,7 +1026,7 @@ figcaption {
 }
 
 .service-item-image {
-  width: 3em;
+  /* width: 3em; */
   margin-bottom: 0.75em;
 }
 
@@ -2088,7 +2089,7 @@ figcaption {
 
 .services-list-wrapper {
   width: 72%;
-  max-width: 61.25em;
+  /* max-width: 61.25em; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -2111,7 +2112,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   background-color: #212529;
 }
 
@@ -2143,7 +2144,7 @@ figcaption {
 }
 
 .service-img {
-  /* width: 45%; */
+  width: 55%;
   padding-left: 10%;
   height: 25%
 }
@@ -2172,8 +2173,9 @@ figcaption {
 }
 
 .service-item-desc-text-style {
-  color: #5ab2ce;
+  color: #faf7f2;
   font-size: 1.25em;
+  width: 120%;
 }
 
 .project-hero-section {
@@ -3236,9 +3238,9 @@ figcaption {
   }
 
   .services-list-wrapper {
-    width: auto;
-    margin-right: 1.5em;
-    margin-left: 1.5em;
+    /* width: auto; */
+    margin-right: 1em;
+    margin-left: 1em;
     padding-top: 5em;
   }
 
@@ -3260,7 +3262,7 @@ figcaption {
   }
 
   .service-item-content-wrapper {
-    width: 100%;
+    width: 50%;
     min-height: 20em;
   }
 
