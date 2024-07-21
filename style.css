@@ -2145,7 +2145,6 @@ figcaption {
 
 .service-img {
   width: 55%;
-  padding-left: 10%;
   height: 25%
 }
 
@@ -2174,6 +2173,7 @@ figcaption {
 
 .service-item-desc-text-style {
   padding-top: 1em;
+  padding-right: 10%;
   line-height: 1.35em;
   font-family: Roboto;
   color: #faf7f2;
