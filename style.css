@@ -74,7 +74,7 @@ h3 {
 h4 {
   margin-top: 0px;
   margin-bottom: 0px;
-  /* font-family: Clashdisplay, sans-serif; */
+  font-family: Clashdisplay, sans-serif;
   font-size: 2.5em;
   line-height: 90%;
   font-weight: 600;
@@ -1196,7 +1196,6 @@ body {
 
 .callout-image-span {
   display: inline-block;
-  background-image: url("https://assets.website-files.com/6363836a8e821c6d37fd94c6/63691d5cc6c70b1761615342_img-portrait-oval.png");
   background-position: 50% 62%;
   background-size: 6rem 6rem;
   background-repeat: no-repeat;
@@ -3007,11 +3006,11 @@ body {
 
   .default-rich-text h4 {
     font-size: 2.25em;
-    font-family: Lora;
+    font-family:  Clashdisplay, sans-serif;
   }
 
   .program-title {
-    font-family: Lora;
+    font-family:  Clashdisplay, sans-serif;
   }
 
   .nav-links-container {
