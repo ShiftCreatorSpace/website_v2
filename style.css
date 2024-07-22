@@ -64,7 +64,6 @@ h2 {
 h3 {
   margin-top: 0rem;
   margin-bottom: 0rem;
-  font-family: Clashdisplay, sans-serif;
   font-size: 3.25em;
   line-height: 90%;
   font-weight: 700;
@@ -75,7 +74,7 @@ h3 {
 h4 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Clashdisplay, sans-serif;
+  /* font-family: Clashdisplay, sans-serif; */
   font-size: 2.5em;
   line-height: 90%;
   font-weight: 600;
@@ -152,6 +151,7 @@ figcaption {
   max-width: 80em;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 5em;
 }
 
 .margin-top-small {
@@ -216,7 +216,7 @@ figcaption {
 }
 
 .title-small {
-  font-family: Lora;
+  font-family: 'IMB Plex Sans', sans-serif;
   font-size: 2em;
   line-height: 90%;
   font-weight: 600;
@@ -226,14 +226,17 @@ figcaption {
 
 .text-size-large {
   font-size: 1.5em;
+  font-family: 'IMB Plex Sans', sans-serif;
   letter-spacing: -0.05rem;
 }
 
 .text-size-small {
+  font-family: 'IMB Plex Sans', sans-serif;
   font-size: 0.875em;
 }
 
 .text-size-xsmall {
+  font-family: 'IMB Plex Sans', sans-serif;
   font-size: 0.75em;
 }
 
@@ -618,8 +621,21 @@ figcaption {
   /* background-image: url(./Assets/background.jpg);  */
   /* background-image: linear-gradient(to bottom,transparent 5px,var(--accent-background) 5px),linear-gradient(to right, black 1px,transparent 1px),linear-gradient(to right,transparent 5px,var(--accent-background) 5px),linear-gradient(to bottom,black 1px,transparent 1px); */
   /* background-size: contain;  */
-  background-color: rgba(250, 247, 242,0.93);
+  background-color: rgba(250, 247, 242,0.90);
   background-blend-mode: lighten;
+}
+
+body {
+  background-size: 10px 10px, 80px 80px;
+  background-image: linear-gradient(to bottom,transparent 5px,#faf7f2 5px),linear-gradient(to right,black 1px,transparent 1px),linear-gradient(to right,transparent 5px,#faf7f2 5px),linear-gradient(to bottom,black 1px,transparent 1px);
+  /* background-color:#0082f3; */
+  /* background-image: linear-gradient(to bottom,transparent 5px,var(--accent-background) 5px),linear-gradient(to right,#ffffff 1px,transparent 1px),linear-gradient(to right,transparent 5px,var(--accent-background) 5px),linear-gradient(to bottom,#ffffff 1px,transparent 1px); */
+  /* background-image: url(./Assets/background.jpg);  */
+  /* background-image: linear-gradient(to bottom,transparent 5px,var(--accent-background) 5px),linear-gradient(to right, black 1px,transparent 1px),linear-gradient(to right,transparent 5px,var(--accent-background) 5px),linear-gradient(to bottom,black 1px,transparent 1px); */
+  /* background-size: contain;  */
+  background-color: rgba(250, 247, 242,0.90);
+  background-blend-mode: lighten;
+}
 }
 
 .home-hero-section:before{
@@ -671,7 +687,7 @@ figcaption {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 100vw;
-  background-color: #212529;
+  background-color:  #212529;
   text-decoration: none;
 }
 
@@ -732,6 +748,7 @@ figcaption {
 .hero-image {
   width: 7.5em;
   height: 7.5em;
+  padding: 1em;
   margin-right: 1em;
   border-radius: 100vw;
 }
@@ -876,9 +893,10 @@ figcaption {
 
 .line-ttitle-shape {
   width: 100%;
-  height: 3px;
+  height: 5px;
   margin-right: 1.5em;
   margin-left: 1.25em;
+  margin-bottom: 2em;
   background-color: #212529;
   -webkit-transform-origin: 0% 50%;
   -ms-transform-origin: 0% 50%;
@@ -987,7 +1005,6 @@ figcaption {
 }
 
 .services-section {
-  padding-top: 10em;
   padding-bottom: 10em;
 }
 
@@ -1026,11 +1043,13 @@ figcaption {
 }
 
 .service-item-image {
-  /* width: 3em; */
+  width: 3em;
+  align-items: center;
   margin-bottom: 0.75em;
 }
 
 .home-service-item-head {
+  font-family: Lora;
   margin-bottom: 1em;
 }
 
@@ -1495,15 +1514,24 @@ figcaption {
   text-transform: uppercase;
 }
 
+@media all and ( max-width: 767px ) {
+  .hero-home-wrapper {
+    background-image: none !important;
+  }
+  .service-item-desc-text-style {
+    width:200%;
+  }
+}
+
 .hero-home-wrapper {
   width: 90%;
   max-width: 80em;
   margin-right: auto;
   margin-left: auto;
-  background-image: url("Assets/illustration.svg");
-  background-position: 95% 90%;
+  background-image: url("Assets/overlapPics.png");
+  background-position: 100% 50%;
   background-repeat: no-repeat;
-  background-size: 30vw 24vw;
+  background-size: 50%;
 }
 
 .section-title-wrapper {
@@ -1587,13 +1615,11 @@ figcaption {
   margin-top: 0.5em;
   margin-left: 0.75em;
 }
-
 .about-hero-button-wrap {
   margin-top: 5em;
 }
 
 .about-intro-section {
-  padding-top: 10em;
   padding-bottom: 10em;
 }
 
@@ -2144,8 +2170,9 @@ figcaption {
 }
 
 .service-img {
-  width: 55%;
-  height: 25%
+  vertical-align: middle;
+  width: 50%;
+  height: 25%;
 }
 
 .service-item-content-wrapper {
@@ -2173,38 +2200,36 @@ figcaption {
 
 .service-item-desc-text-style {
   padding-top: 1em;
-  padding-right: 10%;
   line-height: 1.35em;
-  font-family: Roboto;
+  font-family: 'IMB Plex Sans', sans-serif;
   color: #faf7f2;
   font-size: 1.25em;
-  width: 120%;
+  width: 110%;
 }
 
 .polaroid {
   display: inline-block;
   overflow: auto;
   height: auto;
-  /* height: 20%;
-  width: 30%; */
+  height: 80%;
+  /* width: 80%; */
   padding: clamp(6px, 5%, 17px);
   padding-bottom: clamp(51px, 25%, 85px);
   background-color:hsla(0,0%,90%,1); /*background color*/
   border:2px solid;
   border-color: white hsla(0,00%,75%,1) hsla(0,0%,40%,1) hsla(0,0%,75%,1); /*border colors (top / right / bottom / left )*/
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"%3E%3Cg fill="%239C92AC19" fill-opacity="0.4"%3E%3Cpath fill-rule="evenodd" d="M0 0h4v4H0V0zm4 4h4v4H4V4z"/%3E%3C/g%3E%3C/svg%3E'); /*background pattern*/
-  box-shadow: 0px 5px 5px hsla(0,0%,0%,.25) ,0px 5px 25px hsla(0,0%,0%,.20);
+  /* box-shadow: 0px 5px 5px hsla(0,0%,0%,.25) ,0px 5px 25px hsla(0,0%,0%,.20); */
 }
 .polaroid .image-block-wrapper{
   padding-bottom:90% !important;
 }
-.polaroid img {
+.polaroid {
   top:0;
   left:0;
   height:100%;
   width:100%;
   object-fit:cover;
-}
 }
 
 .project-hero-section {
@@ -2948,7 +2973,7 @@ figcaption {
     width: auto;
     margin-right: 1.5em;
     margin-left: 1.5em;
-    
+    padding-top: 5em;
   }
 
   .title-xlarge {
@@ -2962,6 +2987,7 @@ figcaption {
   }
 
   .title-medium {
+    font-family:  'Clashdisplay', sans-serif;;
     font-size: 3.125em;
   }
 
@@ -2981,6 +3007,11 @@ figcaption {
 
   .default-rich-text h4 {
     font-size: 2.25em;
+    font-family: Lora;
+  }
+
+  .program-title {
+    font-family: Lora;
   }
 
   .nav-links-container {
@@ -3008,7 +3039,6 @@ figcaption {
   }
 
   .hero-subtitle-text {
-    font-size: 1.25em;
     text-align: center;
     letter-spacing: -0.05rem;
   }
@@ -3059,7 +3089,6 @@ figcaption {
   }
 
   .services-section {
-    padding-top: 5em;
     padding-bottom: 5em;
   }
 
@@ -3297,6 +3326,7 @@ figcaption {
 
   .service-item-desc-text-style {
     font-size: 1em;
+    width: 200%;
   }
 
   .project-hero-section {
@@ -3516,6 +3546,7 @@ figcaption {
   }
 
   .home-service-item-head {
+    font-family: Lora;
     width: 100%;
   }
 
@@ -3690,7 +3721,6 @@ figcaption {
   }
 
   .about-intro-section {
-    padding-top: 5em;
     padding-bottom: 5em;
   }
 
