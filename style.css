@@ -13,7 +13,6 @@
    Start of custom Webflow CSS
    ========================================================================== */
 
-  
 .w-webflow-badge {
   display: none !important;
   visibility: hidden !important;
@@ -151,7 +150,7 @@ figcaption {
   max-width: 80em;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 5em;
+  padding-top: 2em;
 }
 
 .margin-top-small {
@@ -599,7 +598,6 @@ figcaption {
 }
 
 .home-hero-section {
-  padding-top: ;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -897,7 +895,7 @@ body {
   height: 5px;
   margin-right: 1.5em;
   margin-left: 1.25em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   background-color: #212529;
   -webkit-transform-origin: 0% 50%;
   -ms-transform-origin: 0% 50%;
@@ -1005,8 +1003,13 @@ body {
   background-image: linear-gradient(225deg, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0));
 }
 
-.services-section {
-  padding-bottom: 10em;
+.services-section1 {
+  padding-bottom: 5em;
+}
+
+.services-section2 {
+  padding-top: 3em;
+  padding-bottom: 5em;
 }
 
 .home-services-list-cms {
@@ -1026,7 +1029,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 3em;
+  padding: 2em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1037,31 +1040,35 @@ body {
   -ms-flex-align: start;
   align-items: flex-start;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #212529;
   border-radius: 0.125em;
-  background-color: rgba(246, 242, 216, 0.08);
+  background-color: #faf7f2;
 }
 
 .announcement_bar {
   background-color: #212529 !important;
   color: #faf7f2 !important;
-  padding-top: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  padding: 5px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 180%;
-
 }
 
 #x {
   font-family: Clashdisplay, sans-serif;
   letter-spacing: .05em;
+  cursor: pointer;
   height: auto;
   width: auto;
   display: flex;
   align-items: center;
   padding-bottom: 5px;
+  padding-top: 5px;
   margin: auto;
   justify-content: end;
   text-align: end;
@@ -1070,7 +1077,7 @@ body {
   margin-right: 1em;
 }
 
-#announcement {
+#announcement, #announcement-short {
   font-family: Clashdisplay, sans-serif;
   letter-spacing: .05em;
   height: auto;
@@ -1078,8 +1085,11 @@ body {
   display: flex;
   align-items: center;
   padding-bottom: 5px;
+  padding-top: 10px;
+  padding-left: 5px;
   margin: auto;
   text-align: center;
+  display: inline-block;
   /* -moz-transform:translateX(100%);
   -webkit-transform:translateX(100%);	
   transform:translateX(100%); */
@@ -1088,7 +1098,19 @@ body {
   -webkit-animation: example1 25s linear infinite;
   animation: example1 25s linear infinite; */
 }
-
+@media all and ( min-width: 840px ) {
+  #announcement-short{
+    display: none;
+  }
+}
+@media all and ( max-width: 840px ) {
+  #announcement{
+    display: none;
+  }
+  #announcement-short{
+    display: block;
+  }
+}
 
 @-moz-keyframes example1 {
   0%   { -moz-transform: translateX(100%); }
@@ -1128,7 +1150,7 @@ body {
 }
 
 .home-services-list-wrapper {
-  margin-top: 3.75em;
+  margin-top: 1em;
 }
 
 .home-about {
@@ -1212,7 +1234,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
+  min-height: 70vh;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -1230,6 +1252,7 @@ body {
   display: flex;
   width: auto;
   max-width: 80em;
+  padding-bottom: 3em;
   margin-right: auto;
   margin-left: auto;
   -webkit-box-orient: vertical;
@@ -1266,7 +1289,6 @@ body {
 
 .callout-image-span {
   display: inline-block;
-  background-image: url("https://assets.website-files.com/6363836a8e821c6d37fd94c6/63691d5cc6c70b1761615342_img-portrait-oval.png");
   background-position: 50% 62%;
   background-size: 6rem 6rem;
   background-repeat: no-repeat;
@@ -1584,7 +1606,7 @@ body {
   text-transform: uppercase;
 }
 
-@media all and ( max-width: 767px ) {
+@media all and ( max-width: 840px ) {
   .hero-home-wrapper {
     background-image: none !important;
   }
@@ -1610,7 +1632,7 @@ body {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 }
 
 .section-title-wrapper.padding-adjust-xxsmall {
@@ -2208,6 +2230,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1250px;
   /* width: 100%; */
   background-color: #212529;
 }
@@ -2274,7 +2297,7 @@ body {
   font-family: 'IMB Plex Sans', sans-serif;
   color: #faf7f2;
   font-size: 1.25em;
-  width: 110%;
+  width: 105%;
 }
 
 .polaroid {
@@ -2928,7 +2951,7 @@ body {
   color: #212529;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1020px) {
   h2 {
     font-size: 5.5em;
     letter-spacing: -0.15rem;
@@ -2967,7 +2990,9 @@ body {
   .about-moving-text-style {
     font-size: 2.25em;
   }
-
+  .callout{
+    min-height: 50vh;
+  }
   .callout-text-style {
     font-size: 8.625em;
     letter-spacing: -0.3rem;
@@ -3020,7 +3045,7 @@ body {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 840px) {
   h1 {
     font-size: 4em;
     letter-spacing: -0.1rem;
@@ -3043,7 +3068,7 @@ body {
     width: auto;
     margin-right: 1.5em;
     margin-left: 1.5em;
-    padding-top: 5em;
+    padding-top: 2em;
   }
 
   .title-xlarge {
@@ -3077,11 +3102,11 @@ body {
 
   .default-rich-text h4 {
     font-size: 2.25em;
-    font-family: Lora;
+    font-family: Clashdisplay, sans-serif
   }
 
   .program-title {
-    font-family: Lora;
+    font-family: Clashdisplay, sans-serif
   }
 
   .nav-links-container {
@@ -3157,9 +3182,13 @@ body {
   .margin-adjust.second {
     margin-top: 0em;
   }
+  .services-section1 {
+    padding-bottom: 3em;
+  }
 
-  .services-section {
-    padding-bottom: 5em;
+  .services-section2 {
+    padding-top: 2em;
+    padding-bottom: 3em;
   }
 
   .home-services-list-cms {
@@ -3201,7 +3230,7 @@ body {
   }
 
   .callout-text-style {
-    font-size: 3.75em;
+    font-size: 6em;
     letter-spacing: -0.1rem;
   }
 
@@ -3253,6 +3282,7 @@ body {
   }
 
   .sub-footer-wrapper {
+    padding-top: 0em;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -3369,7 +3399,7 @@ body {
     /* width: auto; */
     margin-right: 1em;
     margin-left: 1em;
-    padding-top: 5em;
+    padding-top: 3em;
   }
 
   .service-item-wrapper {
@@ -3382,7 +3412,6 @@ body {
 
   .service-item {
     min-height: auto;
-    margin-bottom: 4em;
   }
 
   .service-img {
@@ -3550,10 +3579,6 @@ body {
 }
 
 @media screen and (max-width: 479px) {
-  .announcement_bar{
-    display: none;
-  }
-
   .title-small.margin-bottom-xsmall-m-only {
     margin-bottom: 0.5rem;
   }
@@ -3568,7 +3593,12 @@ body {
     padding-top: 1.25em;
     padding-bottom: 1.25em;
   }
-
+  #announcement-short{
+    font-size: 0.9em;
+  }
+  .callout-text-style{
+    font-size: 3.75em;
+  }
   .nav-links-container {
     display: none;
   }
@@ -3617,7 +3647,6 @@ body {
 
   .service-item-image {
     width: 2.5em;
-    display: inline-block;
   }
 
   .home-service-item-head {
@@ -4521,7 +4550,7 @@ body {
   grid-area: text-area;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 840px) {
 
   #w-node-_6a0c02ee-f793-e3b6-5e10-4668e9f638e1-ed1b8827 {
     -ms-grid-row: 3;
@@ -4530,7 +4559,7 @@ body {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 840px) {
   #w-node-_6d6015e9-8226-8783-7839-98557825a13a-7825a137 {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
@@ -4538,7 +4567,7 @@ body {
     grid-area: Area;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 840px) {
     .footer-grid>#w-node-_5d912a01-c6d1-d410-cf21-2ed4013d4652-d2fd94cb {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
