@@ -2334,6 +2334,9 @@ body {
   background-color: #fefffe;
   font-family: Inter, san-serif;
   color: #110b11;
+  background-color: #fefffe;
+  font-family: Inter, san-serif;
+  color: #110b11;
   font-size: 1rem;
   line-height: 120%;
   font-weight: 300;
@@ -2398,6 +2401,7 @@ h6 {
   font-family: avenir-next-world-heavy, sans-serif;
   font-size: 1.75em;
   line-height: 90%;
+  font-weight: 600;
   font-weight: 600;
   letter-spacing: -0.05rem;
   text-transform: uppercase;
@@ -2944,6 +2948,7 @@ figcaption {
 }
 
 body {
+  background-color: rgba(246, 242, 216, 0.08);
   background-color: rgba(246, 242, 216, 0.08);
   background-size: 10px 10px, 80px 80px;
   background-image: linear-gradient(to bottom, transparent 5px, #fefffe 5px),
@@ -7097,9 +7102,83 @@ body {
 @font-face {
   font-family: 'avenir-next-world-heavy';
   src: url('https://assets.website-files.com/6363836a8e821c6d37fd94c6/636398b26ef8bb417c2fada9_avenir-next-world-heavy-Bold.otf') format('opentype');
+  font-family: 'avenir-next-world-heavy';
+  src: url('https://assets.website-files.com/6363836a8e821c6d37fd94c6/636398b26ef8bb417c2fada9_avenir-next-world-heavy-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+/* elvis adds random shit to the styles */
+
+display-container {
+  /* Make the element's positioning context relative */
+  position: relative;
+  
+  /* Set the width to 100% of the viewport width */
+  width: 100vw; 
+
+  /* --- Centering Trick --- */
+  /* 1. Move the element's left edge to the horizontal center of its parent */
+  left: 50%;
+  /* 2. Pull the element back to the left by half of its own width */
+  transform: translateX(-50%);
+
+  /* Your other styles remain the same */
+  height: 75vh;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.display-container:active {
+  cursor: grabbing; /* Show a grabbing hand when dragging */
+}
+
+.card-pile {
+  /* This wrapper will be moved by JS. It needs a size large enough
+     to hold all your scattered cards. */
+  position: relative;
+  width: 2000px; /* Example large size */
+  height: 1000px; /* Example large size */
+}
+
+.card {
+  /* --- KEY CHANGE: Use position: absolute to place cards freely --- */
+  position: absolute;
+  width: auto; /* Fixed size for each card */
+  height: auto;
+
+  display:flex; 
+  flex-direction: column;
+
+  /* Polaroid styles from before */
+  padding: 15px 15px 15px 15px;
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  
+  /* The all-important animation for the hover effect */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.card img {
+  width: 15vw; /* Make image fill the card's width */
+  height: auto;  /* Maintain aspect ratio */
+  border-radius: 2px; /* Slightly round the image corners */
+}
+
+.card p {
+  margin-top: 15px; /* Add space between the image and the title */
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+}
+/* --- THE HIGHLIGHT EFFECT using :hover --- */
+.card:hover {
+  /* Lift, enlarge, and straighten the card on hover */
+  transform: translateY(-20px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* This ensures the hovered card is always on top */
 }
 
 /* Adjust hero image spacing to equalize top and bottom padding */
