@@ -7098,29 +7098,6 @@ body {
 
 /* elvis adds random shit to the styles */
 
-display-container {
-  /* Make the element's positioning context relative */
-  position: relative;
-  
-  /* Set the width to 100% of the viewport width */
-  width: 100vw; 
-
-  /* --- Centering Trick --- */
-  /* 1. Move the element's left edge to the horizontal center of its parent */
-  left: 50%;
-  /* 2. Pull the element back to the left by half of its own width */
-  transform: translateX(-50%);
-
-  /* Your other styles remain the same */
-  height: 75vh;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.display-container:active {
-  cursor: grabbing; /* Show a grabbing hand when dragging */
-}
-
 .card-pile {
   /* This wrapper will be moved by JS. It needs a size large enough
      to hold all your scattered cards. */
@@ -7174,4 +7151,24 @@ display-container {
   /* Or adjust as needed */
   padding-bottom: 2em;
   /* Changed from 4em to 2em */
+}
+
+.display-container {
+    overflow: hidden;
+    cursor: grab;
+}
+.display-container:active {
+    cursor: grabbing;
+}
+
+.carousel-container {
+  position:relative;
+  left:50%;
+  right:50%;
+  width: 100vw;
+  height: 600px;
+  background-color: red;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow:hidden;
 }

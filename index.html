@@ -334,8 +334,9 @@
                     <!-- fucking carousel ass thing -->
                     <div class="services-section2">
                         <div class="w-dyn-items">
-                            <div class="display-container">
+                            <div class="carousel-container">
                                 <!-- Card Pile fuck why am i actually documenting this-->
+
                                 <div class="card-pile">
                                     <!-- Insert Individual Card Entries Here-->
                                     <a href="/project-link-1" class="card">
@@ -691,11 +692,13 @@
     // elvis vibed the fuck out of this code
 
     document.addEventListener('DOMContentLoaded', () => {
-        // --- 1. SETUP & CONFIGURATION ---
-        const container = document.querySelector('.display-container');
+        const container = document.querySelector('.carousel-container');
         const pile = document.querySelector('.card-pile');
-        let cards = document.querySelectorAll('.card-pile > .card'); // Initial cards
-        if (cards.length === 0) return; // Exit if no cards
+        let cards = document.querySelectorAll('.card-pile > .card');
+        if (cards.length === 0) return;
+        let pressed = false;
+        let x;
+        let startX;
 
         const cardsToClone = Math.min(cards.length, 5);
 
@@ -712,7 +715,6 @@
             { top: '5%', left: '95%', transform: 'rotate(3deg)' },
         ];
 
-        // --- 2. INITIALIZATION FUNCTIONS ---
         function applyStylesFromArray() {
             cards.forEach((card, index) => {
                 const style = cardStyles[index % cardStyles.length];
@@ -723,83 +725,64 @@
                 }
             });
         }
-
-        function setupInfiniteScroll() {
-            const originalCards = Array.from(cards);
-            for (let i = 0; i < cardsToClone; i++) {
-                const clone = originalCards[originalCards.length - 1 - i].cloneNode(true);
-                pile.insertBefore(clone, pile.firstChild);
-            }
-            for (let i = 0; i < cardsToClone; i++) {
-                const clone = originalCards[i].cloneNode(true);
-                pile.appendChild(clone);
-            }
-            cards = document.querySelectorAll('.card-pile > .card');
-        }
-
-        function sizeAndPositionPile() {
-            let maxWidth = 0;
-            cards.forEach(card => {
-                const cardRight = card.offsetLeft + card.offsetWidth;
-                if (cardRight > maxWidth) maxWidth = cardRight;
-            });
-            pile.style.width = `${maxWidth}px`;
-            const initialOffset = cards[cardsToClone].offsetLeft;
-            pile.style.transform = `translateX(-${initialOffset}px)`;
-            return initialOffset;
-        }
-
-        // --- 3. EXECUTE INITIALIZATION ---
+        
         applyStylesFromArray();
-        setupInfiniteScroll();
-        const initialOffset = sizeAndPositionPile();
+        
+    });
 
-        // --- 4. DRAG AND WRAP LOGIC ---
-        let isDragging = false;
-        let startX;
-        let currentPileX = -initialOffset;
 
-        // Define the boundaries for the teleport check
-        const firstOriginalCard = cards[cardsToClone];
-        const lastOriginalCard = cards[cards.length - 1 - cardsToClone];
-        const originalContentWidth = lastOriginalCard.offsetLeft - firstOriginalCard.offsetLeft;
+    // chatgpt my savior
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.carousel-container');
+        const pile = document.querySelector('.card-pile');
+        if (!container || !pile) {
+            console.warn('carousel container or card-pile not found');
+            return;
+        }
 
-        container.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX;
-            pile.style.transition = 'none';
-            currentPileX = parseFloat(window.getComputedStyle(pile).transform.split(',')[4] || 0);
+        // Ensure pile can be moved via left
+        const pileStyle = getComputedStyle(pile);
+        if (pileStyle.position === 'static') pile.style.position = 'relative';
+        if (!pile.style.left) pile.style.left = '0px';
+
+        let dragging = false;
+        let startX = 0;
+        let startLeft = 0;
+
+        container.addEventListener('pointerdown', (e) => {
+            dragging = true;
+            startX = e.clientX;
+            startLeft = parseInt(pile.style.left, 10) || 0;
+            container.setPointerCapture && container.setPointerCapture(e.pointerId);
+            container.classList.add('dragging');
             e.preventDefault();
         });
 
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        // The key change is in mousemove
-        container.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-
-            const deltaX = e.pageX - startX;
-            let newX = currentPileX + deltaX;
-
-            // --- INVISIBLE TELEPORT LOGIC ---
-
-            // Check if we've dragged past the end (into the right-side clones)
-            if (deltaX < 0 && newX < -lastOriginalCard.offsetLeft) {
-                currentPileX += originalContentWidth;
-                newX += originalContentWidth;
+        // Use document-level pointermove so dragging continues even if pointer leaves container
+        function onPointerMove(e) {
+            if (!dragging) return;
+            const dx = e.clientX - startX;
+            if (startLeft + dx > 100) {
+                pile.style.left = '100px'; // Prevent dragging beyond left edge
+                return;
+            } else if (startLeft + dx < container.clientWidth - pile.scrollWidth - 100) {
+                pile.style.left = `${container.clientWidth - pile.scrollWidth - 100}px`; // Prevent dragging beyond right edge
+                return;
             }
+            pile.style.left = `${startLeft + dx}px`;
+        }
 
-            // Check if we've dragged past the beginning (into the left-side clones)
-            if (deltaX > 0 && newX > -firstOriginalCard.offsetLeft) {
-                currentPileX -= originalContentWidth;
-                newX -= originalContentWidth;
-            }
+        function onPointerUp(e) {
+            if (!dragging) return;
+            dragging = false;
+            container.releasePointerCapture && container.releasePointerCapture(e.pointerId);
+            container.classList.remove('dragging');
+        }
 
-            pile.style.transform = `translate(${newX}px, 0px)`;
+        document.addEventListener('pointermove', onPointerMove);
+        document.addEventListener('pointerup', onPointerUp);
+        document.addEventListener('pointercancel', onPointerUp);
         });
-    });
 
 </script>
 
