@@ -7102,32 +7102,33 @@ body {
   /* This wrapper will be moved by JS. It needs a size large enough
      to hold all your scattered cards. */
   position: relative;
-  width: 2000px; /* Example large size */
-  height: 1000px; /* Example large size */
+  width: 2500px; /* Example large size */
+  height: 800px;
 }
 
 .card {
   /* --- KEY CHANGE: Use position: absolute to place cards freely --- */
   position: absolute;
-  width: auto; /* Fixed size for each card */
+  width: 100px;
   height: auto;
 
-  display:flex; 
+  display: inline-flex; 
   flex-direction: column;
 
   /* Polaroid styles from before */
   padding: 15px 15px 15px 15px;
   background-color: #fdfdfd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   
   /* The all-important animation for the hover effect */
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+
+  text-decoration: none;
+  color: #110b11;
 }
 
 .card img {
-  width: 15vw; /* Make image fill the card's width */
-  height: auto;  /* Maintain aspect ratio */
   border-radius: 2px; /* Slightly round the image corners */
 }
 
@@ -7166,9 +7167,35 @@ body {
   left:50%;
   right:50%;
   width: 100vw;
-  height: 600px;
-  background-color: red;
+  height: 560px;
+  /* background-color: red; */
   margin-left: -50vw;
   margin-right: -50vw;
   overflow:hidden;
+}
+
+.salem-card {
+  width: 300px;
+}
+
+.siyu-card {
+  width: 400px;
+}
+
+.lucas-card {
+  width: 300px;
+}
+
+.card-title {
+  text-decoration: none;
+  font-family: 'IMB Plex Sans', sans-serif;
+  font-size: 2em;
+  line-height: 90%;
+  font-weight: 600;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+}
+
+.dragging {
+  cursor: grabbing;
 }
