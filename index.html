@@ -103,8 +103,8 @@
                 <p id="announcement-short">we're actively recruiting for our winter 2025 class &nbsp;•&nbsp; join our family - applications are now open and due 1/22 - <a style="color: white" href="https://forms.gle/hfBJCL6kXpz2cMXK9">apply here</a></p> -->
 
             <!-- pre applications recruting banner -->
-            <p id="announcement">we're actively recruiting for our winter 2025 class &nbsp;•&nbsp; hop onto our interest list <a style="color: #FF621F" href="https://docs.google.com/forms/d/e/1FAIpQLSeVuTgQRhP92Qokw9Ev9hzCWbY32j3tOJHJKw67mnQ1kiLO5g/viewform?usp=preview">here</a> to stay updated with our open events&nbsp;•&nbsp;</p>
-                <p id="announcement-short">we're actively recruiting for this winter &nbsp;•&nbsp; OPEN INVITE: <a style="color: white" href="https://lu.ma/0ard1t0d">sign up</a> for fuck-it-ship-it on 1/16</p>
+            <p id="announcement">we're actively recruiting for our fall 2025 class &nbsp;•&nbsp; hop onto our interest list <a style="color: #FF621F" href="https://docs.google.com/forms/d/e/1FAIpQLSeVuTgQRhP92Qokw9Ev9hzCWbY32j3tOJHJKw67mnQ1kiLO5g/viewform?usp=preview">here</a>&nbsp;•&nbsp; keep building dope shit</p>
+                <!-- <p id="announcement-short">we're actively recruiting for this winter &nbsp;•&nbsp; OPEN INVITE: <a style="color: white" href="https://lu.ma/0ard1t0d">sign up</a> for fuck-it-ship-it on 1/16</p> -->
 
             <!-- wait list banner -->
             <!-- <p id="announcement">we've wrapped up recruiting for the winter semester &nbsp;•&nbsp; hop onto our interest
@@ -603,115 +603,4 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         // --- 1. SETUP & CONFIGURATION ---
-        const container = document.querySelector('.display-container');
-        const pile = document.querySelector('.card-pile');
-        let cards = document.querySelectorAll('.card-pile > .card'); // Initial cards
-        if (cards.length === 0) return; // Exit if no cards
-
-        const cardsToClone = Math.min(cards.length, 5);
-
-        const cardStyles = [
-            { top: '10%', left: '5%', transform: 'rotate(-8deg)' },
-            { top: '30%', left: '15%', transform: 'rotate(5deg)' },
-            { top: '5%', left: '25%', transform: 'rotate(3deg)' },
-            { top: '10%', left: '35%', transform: 'rotate(-8deg)' },
-            { top: '30%', left: '45%', transform: 'rotate(5deg)' },
-            { top: '5%', left: '55%', transform: 'rotate(3deg)' },
-            { top: '5%', left: '65%', transform: 'rotate(3deg)' },
-            { top: '10%', left: '75%', transform: 'rotate(-8deg)' },
-            { top: '30%', left: '85%', transform: 'rotate(5deg)' },
-            { top: '5%', left: '95%', transform: 'rotate(3deg)' },
-        ];
-
-        // --- 2. INITIALIZATION FUNCTIONS ---
-        function applyStylesFromArray() {
-            cards.forEach((card, index) => {
-                const style = cardStyles[index % cardStyles.length];
-                if (style) {
-                    card.style.top = style.top;
-                    card.style.left = style.left;
-                    card.style.transform = style.transform;
-                }
-            });
-        }
-
-        function setupInfiniteScroll() {
-            const originalCards = Array.from(cards);
-            for (let i = 0; i < cardsToClone; i++) {
-                const clone = originalCards[originalCards.length - 1 - i].cloneNode(true);
-                pile.insertBefore(clone, pile.firstChild);
-            }
-            for (let i = 0; i < cardsToClone; i++) {
-                const clone = originalCards[i].cloneNode(true);
-                pile.appendChild(clone);
-            }
-            cards = document.querySelectorAll('.card-pile > .card');
-        }
-
-        function sizeAndPositionPile() {
-            let maxWidth = 0;
-            cards.forEach(card => {
-                const cardRight = card.offsetLeft + card.offsetWidth;
-                if (cardRight > maxWidth) maxWidth = cardRight;
-            });
-            pile.style.width = `${maxWidth}px`;
-            const initialOffset = cards[cardsToClone].offsetLeft;
-            pile.style.transform = `translateX(-${initialOffset}px)`;
-            return initialOffset;
-        }
-
-        // --- 3. EXECUTE INITIALIZATION ---
-        applyStylesFromArray();
-        setupInfiniteScroll();
-        const initialOffset = sizeAndPositionPile();
-
-        // --- 4. DRAG AND WRAP LOGIC ---
-        let isDragging = false;
-        let startX;
-        let currentPileX = -initialOffset;
-
-        // Define the boundaries for the teleport check
-        const firstOriginalCard = cards[cardsToClone];
-        const lastOriginalCard = cards[cards.length - 1 - cardsToClone];
-        const originalContentWidth = lastOriginalCard.offsetLeft - firstOriginalCard.offsetLeft;
-
-        container.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX;
-            pile.style.transition = 'none';
-            currentPileX = parseFloat(window.getComputedStyle(pile).transform.split(',')[4] || 0);
-            e.preventDefault();
-        });
-
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-        // The key change is in mousemove
-        container.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-
-            const deltaX = e.pageX - startX;
-            let newX = currentPileX + deltaX;
-
-            // --- INVISIBLE TELEPORT LOGIC ---
-
-            // Check if we've dragged past the end (into the right-side clones)
-            if (deltaX < 0 && newX < -lastOriginalCard.offsetLeft) {
-                currentPileX += originalContentWidth;
-                newX += originalContentWidth;
-            }
-
-            // Check if we've dragged past the beginning (into the left-side clones)
-            if (deltaX > 0 && newX > -firstOriginalCard.offsetLeft) {
-                currentPileX -= originalContentWidth;
-                newX -= originalContentWidth;
-            }
-
-            pile.style.transform = `translate(${newX}px, 0px)`;
-        });
-    });
-
-</script>
-
-</html>
+       

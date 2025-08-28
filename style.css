@@ -3,6 +3,9 @@
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
    ========================================================================== */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+body { overflow-x: hidden; }
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -3438,8 +3441,8 @@ body {
 }
 
 .announcement_bar {
-  background-color: #98c1ff !important;
-  color: #110b11 !important;
+  background-color: #110b11 !important;
+  color: white !important;
   position: sticky;
   top: 0px;
   z-index: 1000;
@@ -7095,59 +7098,37 @@ body {
 
 /* elvis adds random shit to the styles */
 
-display-container {
-  /* Make the element's positioning context relative */
-  position: relative;
-  
-  /* Set the width to 100% of the viewport width */
-  width: 100vw; 
-
-  /* --- Centering Trick --- */
-  /* 1. Move the element's left edge to the horizontal center of its parent */
-  left: 50%;
-  /* 2. Pull the element back to the left by half of its own width */
-  transform: translateX(-50%);
-
-  /* Your other styles remain the same */
-  height: 75vh;
-  overflow: hidden;
-  cursor: grab;
-}
-
-.display-container:active {
-  cursor: grabbing; /* Show a grabbing hand when dragging */
-}
-
 .card-pile {
   /* This wrapper will be moved by JS. It needs a size large enough
      to hold all your scattered cards. */
   position: relative;
-  width: 2000px; /* Example large size */
-  height: 1000px; /* Example large size */
+  width: 2500px; /* Example large size */
+  height: 800px;
 }
 
 .card {
   /* --- KEY CHANGE: Use position: absolute to place cards freely --- */
   position: absolute;
-  width: auto; /* Fixed size for each card */
+  width: 100px;
   height: auto;
 
-  display:flex; 
+  display: inline-flex; 
   flex-direction: column;
 
   /* Polaroid styles from before */
   padding: 15px 15px 15px 15px;
   background-color: #fdfdfd;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   
   /* The all-important animation for the hover effect */
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+
+  text-decoration: none;
+  color: #110b11;
 }
 
 .card img {
-  width: 15vw; /* Make image fill the card's width */
-  height: auto;  /* Maintain aspect ratio */
   border-radius: 2px; /* Slightly round the image corners */
 }
 
@@ -7186,4 +7167,51 @@ display-container {
     display: block;
     width: 50%;
   }
+}
+
+
+.display-container {
+    overflow: hidden;
+    cursor: grab;
+}
+.display-container:active {
+    cursor: grabbing;
+}
+
+.carousel-container {
+  position:relative;
+  left:50%;
+  right:50%;
+  width: 100vw;
+  height: 560px;
+  /* background-color: red; */
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow:hidden;
+}
+
+.salem-card {
+  width: 300px;
+}
+
+.siyu-card {
+  width: 400px;
+}
+
+.lucas-card {
+  width: 300px;
+}
+
+.card-title {
+  text-decoration: none;
+  font-family: 'IMB Plex Sans', sans-serif;
+  font-size: 2em;
+  line-height: 90%;
+  font-weight: 600;
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+}
+
+.dragging {
+  cursor: grabbing;
 }
