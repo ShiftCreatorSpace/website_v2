@@ -7156,6 +7156,9 @@ body {
 
 /* Hide video half on portrait (height >= width) */
 @media (max-aspect-ratio: 1/1) {
+  .announcement_bar{
+    display: none;
+  }
   .half-of-top-thing:last-child {
     display: none;
   }
