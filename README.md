@@ -1,8 +1,2 @@
 # website_v2
-getting lit w the bois ft. rohan + ryan
-
-paid:
-https://elias-portfolio-template.webflow.io/
-
-not paid:
-https://themewagon.github.io/JohnDoe/
+Shift Creator Space's public website. So many skeletons buried inside of this repository.
