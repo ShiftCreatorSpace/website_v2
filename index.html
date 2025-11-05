@@ -396,6 +396,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mc-container">
+                        <div class="section-title-shape-wrapper">
+                            <div class="section-title-wrapper padding-adjust-xxsmall">
+                                <h2 class="title-medium origin-top-left">latest posts</h2>
+                            </div>
+                            <div class="line-ttitle-shape"></div>
+                        </div>
+                        <div class="mc-track" id="mc-track">
+                            <div class="mc-row mc-row-top" id="mc-row-top"></div>
+                            <div class="mc-row mc-row-bottom" id="mc-row-bottom"></div>
+                        </div>
+                    </div>
                     <div class="callout">
                         <img alt="" loading="" style="max-width: 800px; justify-content: center; padding-top: 1em;"
                             class="featured-project-image" src="Assets/groupPic2.png" />
@@ -622,6 +634,139 @@
             $(".announcement_bar").hide();
         });
     });
+</script>
+
+<script>
+  const MEDIUM_USERNAME = "shiftcreatorspace";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("mc-track");
+    const rowTop = document.getElementById("mc-row-top");
+    const rowBottom = document.getElementById("mc-row-bottom");
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let dragMoved = false;
+
+    track.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      isDown = true;
+      dragMoved = false;
+      track.classList.add("mc-active");
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track.addEventListener("mouseleave", () => {
+      isDown = false;
+      track.classList.remove("mc-active");
+    });
+
+    track.addEventListener("mouseup", () => {
+      isDown = false;
+      track.classList.remove("mc-active");
+    });
+
+    track.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1;
+      if (Math.abs(walk) > 3) {
+        dragMoved = true;
+      }
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    track.addEventListener("click", (e) => {
+      if (dragMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragMoved = false;
+      }
+    });
+
+    track.addEventListener("touchstart", (e) => {
+      isDown = true;
+      dragMoved = false;
+      startX = e.touches[0].pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track.addEventListener("touchmove", (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - track.offsetLeft;
+      const walk = (x - startX) * 1;
+      if (Math.abs(walk) > 3) {
+        dragMoved = true;
+      }
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    track.addEventListener("touchend", () => {
+      isDown = false;
+    });
+
+    loadMediumPosts(rowTop, rowBottom);
+  });
+
+  async function loadMediumPosts(rowTop, rowBottom) {
+    try {
+      const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${MEDIUM_USERNAME}`;
+      const res = await fetch(feedUrl);
+      const data = await res.json();
+
+      if (!data.items || data.items.length === 0) {
+        rowTop.innerHTML = "<div class='mc-error'>No posts found.</div>";
+        return;
+      }
+
+      const posts = data.items;
+      const topPosts = posts.filter((_, i) => i % 2 === 0);
+      const bottomPosts = posts.filter((_, i) => i % 2 === 1);
+
+      topPosts.forEach((item) => {
+        rowTop.appendChild(createCard(item));
+      });
+
+      bottomPosts.forEach((item) => {
+        rowBottom.appendChild(createCard(item));
+      });
+
+    } catch (err) {
+      console.error(err);
+      rowTop.innerHTML = "<div class='mc-error'>Could not load Medium posts.</div>";
+    }
+  }
+
+  function getThumbnailFromItem(item) {
+    if (item.thumbnail) return item.thumbnail;
+    const html = item.content || item.description || "";
+    const match = html.match(/<img[^>]+src="([^">]+)"/i);
+    if (match && match[1]) return match[1];
+    return null;
+  }
+
+  function createCard(item) {
+    const card = document.createElement("a");
+    card.href = item.link;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    card.className = "mc-card";
+
+    const thumb = getThumbnailFromItem(item);
+
+    card.innerHTML = `
+      <div class="mc-card-image ${thumb ? "" : "mc-empty"}" style="${thumb ? `background-image:url('${thumb}')` : ""}"></div>
+      <div class="mc-card-body">
+        <h3 class="mc-card-title">${item.title}</h3>
+        <p class="mc-card-meta">${new Date(item.pubDate).toLocaleDateString()}</p>
+        <p class="mc-card-desc">${item.description.replace(/<[^>]*>?/gm, "").slice(0, 85)}...</p>
+      </div>
+    `;
+    return card;
+  }
 </script>
 
     <!-- document.addEventListener('DOMContentLoaded', () => {
