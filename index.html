@@ -761,6 +761,7 @@
       <div class="mc-card-image ${thumb ? "" : "mc-empty"}" style="${thumb ? `background-image:url('${thumb}')` : ""}"></div>
       <div class="mc-card-body">
         <h3 class="mc-card-title">${item.title}</h3>
+        <p class="mc-card-author">${item.author}</p>
         <p class="mc-card-meta">${new Date(item.pubDate).toLocaleDateString()}</p>
         <p class="mc-card-desc">${item.description.replace(/<[^>]*>?/gm, "").slice(0, 85)}...</p>
       </div>
